@@ -181,11 +181,11 @@
             line-height: 1.5;
         }
 
-        /* --- STABLE LOGO GRID --- */
+        /* --- PROFESSIONAL LOGO GRID --- */
         .logo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
             align-items: center;
             justify-content: center;
             margin-top: 2rem;
@@ -195,20 +195,101 @@
             background: var(--cream-card);
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #64748b;
+            padding: 24px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: var(--shadow);
-            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(60%);
             transition: var(--transition);
         }
 
         .logo-box:hover {
-            color: var(--navy-deep);
             border-color: #cbd5e1;
-            background: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        .logo-box:hover img {
+            filter: grayscale(0%) opacity(100%);
+        }
+
+        /* --- CONTACT FORM SECTION (טופס השארת פרטים מקצועי) --- */
+        .contact-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 4rem auto 0 auto;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--navy-deep);
+        }
+
+        .form-group label .required-star {
+            color: #dc2626;
+            margin-right: 3px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--navy-deep);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--navy-deep);
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-accent);
+            box-shadow: 0 6px 16px rgba(217, 119, 6, 0.15);
         }
 
         /* --- MODAL EFFECT --- */
@@ -275,26 +356,25 @@
         /* --- BUTTONS & FOOTER --- */
         .cta-container {
             text-align: center;
-            margin: 5rem 0;
+            margin: 4rem 0;
         }
 
         .btn-whatsapp {
             display: inline-block;
-            background: var(--navy-deep);
+            background: #25d366;
             color: #ffffff;
-            padding: 16px 44px;
+            padding: 14px 36px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
             transition: var(--transition);
         }
 
         .btn-whatsapp:hover {
-            background: var(--gold-accent);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.2);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
         }
 
         @keyframes fadeIn {
@@ -361,28 +441,54 @@
             </div>
         </div>
 
-        <!-- אזור חברות שבחרו בנו (גריד סטטי יוקרתי) -->
-        <h2 class="section-title">הם כבר בחרו בנו</h2>
+        <!-- אזור חברות שבחרו בנו -->
+        <h2 class="section-title">בין לקוחותינו</h2>
         <p class="section-subtitle">הארגונים והחברות המובילים במשק שנהנו מחוויית האירוח של דורון</p>
         
         <div class="logo-grid">
-            <div class="logo-box">INTEL</div>
-            <div class="logo-box">ELBIT SYSTEMS</div>
-            <div class="logo-box">RAFAEL</div>
-            <div class="logo-box">CELLCOM</div>
-            <div class="logo-box">PARTNER</div>
-            <div class="logo-box">MINDSPACE</div>
+            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel Logo"></div>
+            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Elbit_Systems_logo.svg" alt="Elbit Logo"></div>
+            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Rafael_Advanced_Defense_Systems_logo.svg" alt="Rafael Logo"></div>
+            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Cellcom_logo.svg" alt="Cellcom Logo"></div>
+            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Partner_Communications_Company_logo.svg" alt="Partner Logo"></div>
         </div>
 
-        <!-- כפתור הנעה לפעולה מעודכן עם המספר החדש -->
+        <!-- טופס השארת פרטים מובנה ויוקרתי -->
+        <h2 class="section-title">השאירו פרטים להצעת מחיר</h2>
+        <p class="section-subtitle">תכננו יחד את האירוע המושלם עבור העובדים שלכם</p>
+        
+        <section class="contact-section">
+            <!-- יש להחליף את ה-YOUR_EMAIL_HERE במייל האמיתי של אבא כדי לקבל הודעות ישירות לשם -->
+            <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
+                <div class="form-group">
+                    <label for="name">שם מלא<span class="required-star">*</span></label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="ישראל ישראלי" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">טלפון נייד<span class="required-star">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="050-1234567" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">כתובת אימייל<span class="required-star">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="company@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">ספרו לנו מה אתם מחפשים ואיזה אירוע נוכל להפוך למדהים עבורכם</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="נשמח לשמוע על כמות משתתפים מוערכת, תאריך מועדף, סוג המנות המבוקש וכל פרט שיעזור לנו לשדרג לכם את האירוע..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">שליחת פרטים לדורון</button>
+            </form>
+        </section>
+
+        <!-- כפתור וואטסאפ מהיר למי שרוצה מענה מיידי -->
         <div class="cta-container">
-            <a href="https://wa.me/972538281987?text=שלום%20דורון,%20נשמח%20לקבל%20פרטים%20והצעת%20מחיר%20עבור%20אירוע%20חברה%20מהאתר." class="btn-whatsapp" target="_blank">ליצירת קשר ותיאום אירוע 💬</a>
+            <p style="margin-bottom: 15px; font-weight: 600; color: var(--text-muted);">מעדיפים לדבר איתנו ישירות עכשיו?</p>
+            <a href="https://wa.me/972538281987?text=שלום%20דורון,%20נשמח%20לקבל%20פרטים%20והצעת%20מחיר%20עבור%20אירוע%20חברה%20מהאתר." class="btn-whatsapp" target="_blank">מענה מהיר בוואטסאפ 💬</a>
         </div>
 
     </div>
 
     <!-- --- חלונות קופצים (MODALS) --- -->
-    <!-- מודל מרקים -->
     <div id="soup-modal" class="modal" onclick="closeModal('soup-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal('soup-modal')">&times;</span>
@@ -399,7 +505,6 @@
         </div>
     </div>
 
-    <!-- מודל גלידות -->
     <div id="ice-modal" class="modal" onclick="closeModal('ice-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal('ice-modal')">&times;</span>
