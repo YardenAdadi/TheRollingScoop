@@ -6,14 +6,14 @@
     <title>דורונס פוד טראק | Doron's Food Truck 🍦🍲</title>
     <style>
         :root {
-            --primary-orange: #f97316;
-            --primary-pink: #ec4899;
-            --dark-blue: #1e3a8a;
-            --text-dark: #0f172a;
+            --navy-deep: #0f172a;       /* כחול נייבי מקצועי ואלגנטי */
+            --navy-muted: #1e293b;      /* גוון משני עמוק */
+            --gold-accent: #d97706;     /* זהב מעודן לאלמנטים נבחרים */
+            --cream-bg: #f8fafc;        /* רקע בהיר ונעים לעין */
+            --cream-card: #ffffff;      /* לבן נקי לכרטיסים */
+            --text-main: #0f172a;
             --text-muted: #475569;
-            --light-bg: #f8fafc;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -25,100 +25,102 @@
         }
 
         body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
+            background-color: var(--cream-bg);
+            color: var(--text-main);
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 50%, #e0f2fe 100%);
-            padding: 6rem 1rem 4rem 1rem;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 5rem 1rem;
             text-align: center;
-            position: relative;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
-            color: var(--dark-blue);
-            margin-bottom: 1rem;
-            font-weight: 900;
-            letter-spacing: -1px;
+            font-size: 3.2rem;
+            color: var(--navy-deep);
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
+            max-width: 650px;
+            margin: 0 auto;
             line-height: 1.6;
         }
 
         .badge {
             display: inline-block;
-            background: var(--white);
+            background: var(--navy-deep);
             padding: 6px 16px;
             border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--primary-orange);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
             margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- SECTION GENERIC --- */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 5rem 0 1.5rem 0;
+            color: var(--navy-deep);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: -1rem;
+            margin-bottom: 3rem;
         }
 
         /* --- MENU CATEGORIES --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin: 4rem 0 2rem 0;
-            color: var(--dark-blue);
-            font-weight: 800;
-        }
-
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .category-card {
-            background: var(--white);
-            border-radius: 24px;
+            background: var(--cream-card);
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
             cursor: pointer;
             transition: var(--transition);
-            position: relative;
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            border-color: var(--gold-accent);
         }
 
         .card-image-placeholder {
-            height: 240px;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
-            position: relative;
+            font-size: 4rem;
             background: #f1f5f9;
-        }
-
-        .card-image-placeholder.soup {
-            background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
-        }
-
-        .card-image-placeholder.ice {
-            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .card-content {
@@ -127,21 +129,86 @@
         }
 
         .card-content h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-bottom: 8px;
-            color: var(--text-dark);
+            color: var(--navy-deep);
         }
 
         .card-content p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
 
         .click-hint {
-            font-size: 0.9rem;
-            color: var(--primary-orange);
+            font-size: 0.85rem;
+            color: var(--gold-accent);
+            font-weight: 600;
+        }
+
+        /* --- SERVICES / EVENTS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-box {
+            background: var(--cream-card);
+            padding: 35px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-box .icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--navy-deep);
+        }
+
+        .service-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--navy-deep);
+        }
+
+        .service-box p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* --- STABLE LOGO GRID --- */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .logo-box {
+            background: var(--cream-card);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
             font-weight: 700;
+            color: #64748b;
+            box-shadow: var(--shadow);
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .logo-box:hover {
+            color: var(--navy-deep);
+            border-color: #cbd5e1;
+            background: #f8fafc;
         }
 
         /* --- MODAL EFFECT --- */
@@ -152,149 +219,86 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(8px);
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
             z-index: 1000;
             justify-content: center;
             align-items: center;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.2s ease;
         }
 
         .modal-content {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 32px;
-            max-width: 600px;
+            background: var(--cream-card);
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 550px;
             width: 90%;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             position: relative;
             text-align: center;
+            border: 1px solid #e2e8f0;
         }
 
         .close-modal {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 2rem;
+            top: 15px;
+            left: 25px;
+            font-size: 1.8rem;
             cursor: pointer;
             color: var(--text-muted);
+        }
+
+        .close-modal:hover {
+            color: var(--text-main);
         }
 
         .food-list {
             margin-top: 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 12px;
             text-align: right;
         }
 
         .food-item {
-            background: var(--light-bg);
-            padding: 12px 16px;
-            border-radius: 12px;
-            font-weight: 600;
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        /* --- SERVICES / EVENTS --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 2rem;
-        }
-
-        .service-box {
-            background: var(--white);
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: 1px solid #f1f5f9;
-        }
-
-        .service-box .icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .service-box h4 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: var(--dark-blue);
-        }
-
-        /* --- MARQUEE CLIENTS --- */
-        .clients-section {
-            background: var(--white);
-            padding: 4rem 0;
-            margin-top: 5rem;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .clients-title {
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-        }
-
-        .marquee-wrapper {
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-            white-space: nowrap;
-            padding: 10px 0;
-        }
-
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-        }
-
-        .client-logo {
-            display: inline-block;
-            margin: 0 40px;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #94a3b8;
-            letter-spacing: 1px;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(50%); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; } to { opacity: 1; }
+            gap: 8px;
+            color: var(--navy-muted);
         }
 
         /* --- BUTTONS & FOOTER --- */
         .cta-container {
             text-align: center;
-            margin: 4rem 0;
+            margin: 5rem 0;
         }
 
         .btn-whatsapp {
             display: inline-block;
-            background: #25d366;
-            color: var(--white);
-            padding: 16px 40px;
-            border-radius: 50px;
+            background: var(--navy-deep);
+            color: #ffffff;
+            padding: 16px 44px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
             transition: var(--transition);
         }
 
         .btn-whatsapp:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+            background: var(--gold-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
         }
     </style>
 </head>
@@ -302,100 +306,95 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="badge">🚚 דורונס פוד טראק הרשמי</div>
-        <h1>החוויה הקולינרית של דורון</h1>
-        <p>מביאים אליכם את השילוב המושלם: מרקים ביתיים עשירים ומנחמים לחורף, וגלידות בוטיק וקינוחים מרעננים לקיץ. הכל מוגש מחוויית פוד טראק חגיגית ומעוצבת!</p>
+        <div class="badge">DORON'S FOOD TRUCK</div>
+        <h1>חוויה קולינרית לאירועי חברה</h1>
+        <p>שדרוג מקצועי ומפנק להאפי האוור, אירועים ארגוניים ומסיבות חברה. אנו מציעים קונספט תפריט מותאם עונה – מרקים עשירים ומנחמים לחורף, או גלידות בוטיק פרימיום לימי הקיץ.</p>
     </section>
 
     <div class="container">
         
-        <!-- הקטגוריות הלחיצות -->
-        <h2 class="section-title">מה מחכה לכם בתפריט?</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; margin-top: -1.5rem;">לחצו על הקטגוריות כדי לראות את מגוון המנות המלא שלנו!</p>
+        <!-- קטגוריות תפריט אינטראקטיביות -->
+        <h2 class="section-title">התפריט שלנו</h2>
+        <p class="section-subtitle">לחצו על הקטגוריה לצפייה במגוון המנות המלא</p>
         
         <div class="category-grid">
             <!-- קוביית מרקים -->
             <div class="category-card" onclick="openModal('soup-modal')">
-                <div class="card-image-placeholder soup">🍲</div>
+                <div class="card-image-placeholder">🍲</div>
                 <div class="card-content">
-                    <h3>חוויית החורף: מרקים חמים</h3>
-                    <p>מרקים עשירים שמבושלים שעות ארוכות, עם חומרי גלם טריים וטעם של בית.</p>
-                    <span class="click-hint">לחצו לצפייה בכל המרקים 👈</span>
+                    <h3>תפריט חורף: מרקי בוטיק חמים</h3>
+                    <p>קולקציית מרקים עשירים מחומרי גלם מובחרים, המוגשים חמים ומעוררים השראה בכל אירוע חברה.</p>
+                    <span class="click-hint">לחצו לפירוט המנות המלא 👈</span>
                 </div>
             </div>
 
             <!-- קוביית גלידות -->
             <div class="category-card" onclick="openModal('ice-modal')">
-                <div class="card-image-placeholder ice">🍦</div>
+                <div class="card-image-placeholder">🍦</div>
                 <div class="card-content">
-                    <h3>חוויית הקיץ: ג'לאטו וקינוחים</h3>
-                    <p>גלידות פרימיום, סורבה מרענן, וקינוחים מושחתים שירימו לכם את האנרגיה.</p>
-                    <span class="click-hint">לחצו לצפייה בכל הקינוחים 👈</span>
+                    <h3>תפריט קיץ: ג'לאטו וקינוחי פרימיום</h3>
+                    <p>חוויה קרירה ומרעננת של גלידות בוטיק איטלקיות, סורבה פירות טבעי וקינוחים מיוחדים להרמות כוסית.</p>
+                    <span class="click-hint">לחצו לפירוט המנות המלא 👈</span>
                 </div>
             </div>
         </div>
 
-        <!-- אזור השירותים והאירועים -->
-        <h2 class="section-title">הפוד טראק מגיע לכל אירוע</h2>
+        <!-- התאמה לאירועים עסקיים ומוסדיים -->
+        <h2 class="section-title">פתרונות הגשה לכל קונספט</h2>
+        <p class="section-subtitle">נתאים את עצמנו בדיוק לאופי ולסגנון של הארגון שלכם</p>
+        
         <div class="services-grid">
             <div class="service-box">
-                <div class="icon">🏢</div>
-                <h4>האפי הוואר לחברות</h4>
-                <p>מפנקים את העובדים במשרד או בהרמת כוסית חגיגית עם תפריט מותאם אישית.</p>
+                <div class="icon">💼</div>
+                <h4>Happy Hour חברות</h4>
+                <p>הפוגה מתוקה או מנחמת באמצע יום העבודה שמביאה אנרגיה טובה, גיבוש וחיוך למשרדים.</p>
             </div>
             <div class="service-box">
                 <div class="icon">🏫</div>
-                <h4>בתי ספר ומוסדות</h4>
-                <p>אירועי סוף שנה, ימי המורה או הפנינג שמח עם חוויה מתוקה או חמה.</p>
+                <h4>מוסדות חינוך וציבור</h4>
+                <p>אירועי הערכה לצוותי הוראה, ימי המורה, מסיבות סוף שנה והפנינג קהילתי חגיגי.</p>
             </div>
             <div class="service-box">
-                <div class="icon">🎉</div>
-                <h4>חגים ואירועים</h4>
-                <p>חגיגות יישוביות, הרמות כוסית לחג, מסיבות פרטיות וימי הולדת משפחתיים.</p>
+                <div class="icon">🥂</div>
+                <h4>הרמות כוסית ואירועי חג</h4>
+                <p>פתרון אירוח מושלם ומעוצב לחגים, ציוני דרך עסקיים, השקות ומסיבות פרטיות.</p>
             </div>
         </div>
 
-        <!-- כפתור הנעה לפעולה -->
+        <!-- אזור חברות שבחרו בנו (גריד סטטי יוקרתי) -->
+        <h2 class="section-title">הם כבר בחרו בנו</h2>
+        <p class="section-subtitle">הארגונים והחברות המובילים במשק שנהנו מחוויית האירוח של דורון</p>
+        
+        <div class="logo-grid">
+            <div class="logo-box">INTEL</div>
+            <div class="logo-box">ELBIT SYSTEMS</div>
+            <div class="logo-box">RAFAEL</div>
+            <div class="logo-box">CELLCOM</div>
+            <div class="logo-box">PARTNER</div>
+            <div class="logo-box">MINDSPACE</div>
+        </div>
+
+        <!-- כפתור הנעה לפעולה מעודכן עם המספר החדש -->
         <div class="cta-container">
-            <a href="https://wa.me/972500000000?text=היי%20דורון,%20ראיתי%20את%20האתר%20של%20דורונס%20פוד%20טראק%20ואשמח%20לקבל%20פרטים%20לאירוע!" class="btn-whatsapp" target="_blank">בואו נתכנן אירוע יחד 💬</a>
+            <a href="https://wa.me/972538281987?text=שלום%20דורון,%20נשמח%20לקבל%20פרטים%20והצעת%20מחיר%20עבור%20אירוע%20חברה%20מהאתר." class="btn-whatsapp" target="_blank">ליצירת קשר ותיאום אירוע 💬</a>
         </div>
 
     </div>
-
-    <!-- שורת חברות נעה (הם כבר בחרו בנו) -->
-    <section class="clients-section">
-        <h3 class="clients-title">החברות המובילות במשק כבר בחרו בדורונס פוד טראק:</h3>
-        <div class="marquee-wrapper">
-            <div class="marquee-content">
-                <span class="client-logo">INTEL</span>
-                <span class="client-logo">ELBIT SYSTEMS</span>
-                <span class="client-logo">RAFAEL</span>
-                <span class="client-logo">CELLCOM</span>
-                <span class="client-logo">PARTNER</span>
-                <span class="client-logo">MINDSPACE</span>
-                <!-- חזרה בשביל תנועה חלקה -->
-                <span class="client-logo">INTEL</span>
-                <span class="client-logo">ELBIT SYSTEMS</span>
-                <span class="client-logo">RAFAEL</span>
-                <span class="client-logo">CELLCOM</span>
-            </div>
-        </div>
-    </section>
 
     <!-- --- חלונות קופצים (MODALS) --- -->
     <!-- מודל מרקים -->
     <div id="soup-modal" class="modal" onclick="closeModal('soup-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal('soup-modal')">&times;</span>
-            <h3 style="font-size: 2rem; margin-bottom: 10px; color: var(--primary-orange);">המרקים המנחמים שלנו 🍲</h3>
-            <p>כל המרקים נעשים באהבה ומוגשים חמים ומפנקים:</p>
+            <h3 style="font-size: 1.6rem; margin-bottom: 12px; color: var(--navy-deep);">תפריט מרקים מובחרים 🍲</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">מרקי שף המוגשים בליווי תוספות פריכות ולחמי בוטיק:</p>
             <div class="food-list">
-                <div class="food-item">🥟 מרק קובה עשיר (חמוסטה / סלק)</div>
-                <div class="food-item">🥩 מרק בשר תימני אסבלי</div>
-                <div class="food-item">🌾 מרק גריסים וירקות שורש</div>
-                <div class="food-item">🟠 מרק כתומים קטיפתי</div>
-                <div class="food-item">🍅 מרק עגבניות ואורז קלאסי</div>
-                <div class="food-item">🥔 מרק תפוחי אדמה ופטריות</div>
+                <div class="food-item">🔹 מרק קובה עשיר (חמוסטה / סלק)</div>
+                <div class="food-item">🔹 מרק בשר תימני אסבלי קלאסי</div>
+                <div class="food-item">🔹 מרק גריסים וירקות שורש</div>
+                <div class="food-item">🔹 מרק כתומים קטיפתי בניחוח ג'ינג'ר</div>
+                <div class="food-item">🔹 מרק עגבניות צלויות ואורז</div>
+                <div class="food-item">🔹 מרק תפוחי אדמה ופטריות יער</div>
             </div>
         </div>
     </div>
@@ -404,15 +403,15 @@
     <div id="ice-modal" class="modal" onclick="closeModal('ice-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal('ice-modal')">&times;</span>
-            <h3 style="font-size: 2rem; margin-bottom: 10px; color: var(--primary-pink);">הגלידות והקינוחים שלנו 🍦</h3>
-            <p>החלק המתוק של האירוע שלכם עם הגשה מושלמת:</p>
+            <h3 style="font-size: 1.6rem; margin-bottom: 12px; color: var(--navy-deep);">תפריט גלידות וקינוחים 🍦</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">עמדת קינוחים אקטיבית וג'לאטו פרימיום לאירוע מרענן:</p>
             <div class="food-list">
-                <div class="food-item">🍫 ג'לאטו איטלקי שוקולד פרימיום</div>
-                <div class="food-item">🍦 וניל מדגסקר קלאסי עשיר</div>
-                <div class="food-item">🍓 סורבה תות שדה מרענן</div>
-                <div class="food-item">🍋 סורבה לימון ונענע טריים</div>
-                <div class="food-item">🧇 ופל בלגי חם עם תוספות</div>
-                <div class="food-item">🥤 מילקשייקים מטורפים בהתאמה אישית</div>
+                <div class="food-item">🔹 ג'לאטו איטלקי שוקולד בלגי</div>
+                <div class="food-item">🔹 וניל מדגסקר אמיתי ועשיר</div>
+                <div class="food-item">🔹 סורבה תות שדה טבעי 100% פרי</div>
+                <div class="food-item">🔹 סורבה לימונענע מרענן</div>
+                <div class="food-item">🔹 ופל בלגי חם הנאפה במקום</div>
+                <div class="food-item">🔹 מילקשייק בר מפואר בהתאמה</div>
             </div>
         </div>
     </div>
