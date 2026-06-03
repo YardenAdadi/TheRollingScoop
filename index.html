@@ -182,7 +182,7 @@
             line-height: 1.5;
         }
 
-        /* --- OUR CUSTOMERS GRID (בהשראת תמונה image_02c03c.png) --- */
+        /* --- OUR CUSTOMERS GRID (תיקון מלא לקישורי התמונות) --- */
         .customers-wrapper {
             background: var(--cream-card);
             border-top: 1px solid var(--border-color);
@@ -196,7 +196,7 @@
             grid-template-columns: repeat(3, 1fr);
             border: 1px solid var(--border-color);
             background-color: var(--border-color);
-            gap: 1px; /* מייצר את הקווים הדקים המפרידים */
+            gap: 1px;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -215,7 +215,7 @@
             max-height: 100%;
             object-fit: contain;
             filter: grayscale(100%);
-            opacity: 0.7;
+            opacity: 0.6;
             transition: var(--transition);
         }
 
@@ -242,10 +242,10 @@
         }
 
         .center-title-box h3 span {
-            color: #22d3ee; /* צבע הטורקיז המדויק מהלוגו בתמונה */
+            color: #22d3ee;
         }
 
-        /* --- CONTACT FORM SECTION (בהשראת תמונה image_02b880.png) --- */
+        /* --- CONTACT FORM SECTION --- */
         .contact-section {
             max-width: 550px;
             margin: 5rem auto;
@@ -290,7 +290,7 @@
             width: 100%;
             padding: 12px;
             border: 1px solid #c8d1db;
-            border-radius: 4px; /* מינימליסטי כמו בתמונה */
+            border-radius: 4px;
             font-size: 1rem;
             color: var(--text-main);
             background-color: transparent;
@@ -310,7 +310,7 @@
 
         .btn-submit {
             width: 100%;
-            background: #c2410c; /* הגוון הכתום-אדמדם של הכפתור בתחתית הטופס */
+            background: #c2410c;
             color: #ffffff;
             padding: 14px;
             border: none;
@@ -415,6 +415,7 @@
 </head>
 <body>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="badge">DORON'S FOOD TRUCK</div>
         <h1>חוויה קולינרית לאירועי חברה</h1>
@@ -423,6 +424,7 @@
 
     <div class="container">
         
+        <!-- קטגוריות תפריט אינטראקטיביות -->
         <h2 class="section-title">התפריט שלנו</h2>
         <p class="section-subtitle">לחצו על הקטגוריה לצפייה במגוון המנות המלא</p>
         
@@ -446,6 +448,7 @@
             </div>
         </div>
 
+        <!-- פתרונות הגשה -->
         <h2 class="section-title">פתרונות הגשה לכל קונספט</h2>
         <p class="section-subtitle">נתאים את עצמנו בדיוק לאופי ולסגנון של הארגון שלכם</p>
         
@@ -468,24 +471,51 @@
         </div>
     </div>
 
+    <!-- אזור לקוחות משודרג - קישורי CDN פתוחים ומאובטחים שלא נחסמים -->
     <section class="customers-wrapper">
         <div class="logo-layout-grid">
-            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel"></div>
-            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Elbit_Systems_logo.svg" alt="Elbit"></div>
-            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Rafael_Advanced_Defense_Systems_logo.svg" alt="Rafael"></div>
+            <!-- Rafael -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/rafaeladvanceddefensesystems.svg" alt="Rafael" style="height: 45px;">
+            </div>
+            <!-- Elbit -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/elbitsystems.svg" alt="Elbit" style="height: 45px;">
+            </div>
+            <!-- Intel -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/gilbarbara/logos@master/logos/intel.svg" alt="Intel" style="height: 45px;">
+            </div>
             
-            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Cellcom_logo.svg" alt="Cellcom"></div>
+            <!-- Cellcom -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cellcom.svg" alt="Cellcom" style="height: 45px;">
+            </div>
+            <!-- הקובייה המרכזית עם הכותרת המעוצבת -->
             <div class="center-title-box">
                 <h3>OUR<br><span>CUSTOMERS</span></h3>
             </div>
-            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Partner_Communications_Company_logo.svg" alt="Partner"></div>
+            <!-- Partner -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/partner.svg" alt="Partner" style="height: 45px;">
+            </div>
             
-            <div class="logo-layout-box"><img src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco/v1408620242/fubf7wz6idffnshgshmm.png" alt="NetApp"></div>
-            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft"></div>
-            <div class="logo-layout-box"><img src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco/v1473852758/g2pwhstnhg3shf6g1w9w.png" alt="Mindspace"></div>
+            <!-- NetApp -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/gilbarbara/logos@master/logos/netapp.svg" alt="NetApp" style="height: 35px;">
+            </div>
+            <!-- Microsoft -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/gilbarbara/logos@master/logos/microsoft.svg" alt="Microsoft" style="height: 35px;">
+            </div>
+            <!-- Mindspace -->
+            <div class="logo-layout-box">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mindspace.svg" alt="Mindspace" style="height: 45px;">
+            </div>
         </div>
     </section>
 
+    <!-- טופס השארת פרטים מינימליסטי ומעוצב לפי התמונה -->
     <section class="contact-section">
         <h2>מרגישים את הפרפרים בבטן של האירוע הבא?</h2>
         <p class="form-subtitle">השאירו פרטים ונהפוך אותו לכל מה שחלמתם עליו.</p>
@@ -512,10 +542,10 @@
                 </div>
             </div>
             <div class="form-group" style="margin-top: 20px;">
-                <label for="message">עוד קצת פרטים לפני שנדבר</label>
-                <textarea id="message" name="message" class="form-control" placeholder="נשמח לשמוע על כמות משתתפים, תאריך מועדף או סגנון האירוע..."></textarea>
+                <label for="message">נשמח לשמוע על האירוע שלכם: ספרו לנו בקצרצר על הקונספט המבוקש, כמות המשתתפים המשוערת וכל פרט שחשוב לכם שנדע כדי להרכיב עבורכם את החוויה המושלמת.</label>
+                <textarea id="message" name="message" class="form-control" placeholder="למשל: תאריך מועדף, מיקום האירוע, סגנון המנות המבוקש (קיץ/חורף) וכל דגש אחר שיעזור לנו לדייק את הצעת המחיר..."></textarea>
             </div>
-            <button type="submit" class="btn-submit">שליחת פרטים לדורון</button>
+            <button type="submit" class="btn-submit">שליחת פרטים </button>
         </form>
     </section>
 
@@ -526,6 +556,7 @@
         </div>
     </div>
 
+    <!-- --- חלונות קופצים (MODALS) --- -->
     <div id="soup-modal" class="modal" onclick="closeModal('soup-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal('soup-modal')">&times;</span>
