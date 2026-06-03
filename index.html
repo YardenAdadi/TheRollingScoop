@@ -6,14 +6,15 @@
     <title>דורונס פוד טראק | Doron's Food Truck 🍦🍲</title>
     <style>
         :root {
-            --navy-deep: #0f172a;       /* כחול נייבי מקצועי ואלגנטי */
-            --navy-muted: #1e293b;      /* גוון משני עמוק */
-            --gold-accent: #d97706;     /* זהב מעודן לאלמנטים נבחרים */
-            --cream-bg: #f8fafc;        /* רקע בהיר ונעים לעין */
-            --cream-card: #ffffff;      /* לבן נקי לכרטיסים */
+            --navy-deep: #0f172a;
+            --navy-muted: #1e293b;
+            --gold-accent: #d97706;
+            --cream-bg: #f8fafc;
+            --cream-card: #ffffff;
             --text-main: #0f172a;
             --text-muted: #475569;
-            --shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -42,7 +43,7 @@
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
             padding: 5rem 1rem;
             text-align: center;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
@@ -102,7 +103,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
             cursor: pointer;
             transition: var(--transition);
         }
@@ -120,7 +121,7 @@
             justify-content: center;
             font-size: 4rem;
             background: #f1f5f9;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .card-content {
@@ -160,7 +161,7 @@
             border-radius: 16px;
             text-align: center;
             box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
         }
 
         .service-box .icon {
@@ -181,115 +182,148 @@
             line-height: 1.5;
         }
 
-        /* --- PROFESSIONAL LOGO GRID --- */
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 24px;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2rem;
+        /* --- OUR CUSTOMERS GRID (בהשראת תמונה image_02c03c.png) --- */
+        .customers-wrapper {
+            background: var(--cream-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 5rem 0;
+            margin-top: 5rem;
         }
 
-        .logo-box {
+        .logo-layout-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--border-color);
+            background-color: var(--border-color);
+            gap: 1px; /* מייצר את הקווים הדקים המפרידים */
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .logo-layout-box {
             background: var(--cream-card);
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 24px;
-            height: 100px;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            padding: 30px;
         }
 
-        .logo-box img {
+        .logo-layout-box img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            filter: grayscale(100%) opacity(60%);
+            filter: grayscale(100%);
+            opacity: 0.7;
             transition: var(--transition);
         }
 
-        .logo-box:hover {
-            border-color: #cbd5e1;
-            transform: translateY(-2px);
+        .logo-layout-box:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
-        .logo-box:hover img {
-            filter: grayscale(0%) opacity(100%);
+        .center-title-box {
+            background: var(--cream-card);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        /* --- CONTACT FORM SECTION (טופס השארת פרטים מקצועי) --- */
+        .center-title-box h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--navy-deep);
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .center-title-box h3 span {
+            color: #22d3ee; /* צבע הטורקיז המדויק מהלוגו בתמונה */
+        }
+
+        /* --- CONTACT FORM SECTION (בהשראת תמונה image_02b880.png) --- */
         .contact-section {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 600px;
-            margin: 4rem auto 0 auto;
-            box-shadow: var(--shadow);
+            max-width: 550px;
+            margin: 5rem auto;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .contact-section p.form-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 20px;
             text-align: right;
         }
 
         .form-group label {
             display: block;
             font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 6px;
+            font-weight: 500;
+            margin-bottom: 8px;
             color: var(--navy-deep);
-        }
-
-        .form-group label .required-star {
-            color: #dc2626;
-            margin-right: 3px;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #c8d1db;
+            border-radius: 4px; /* מינימליסטי כמו בתמונה */
             font-size: 1rem;
             color: var(--text-main);
-            background-color: #f8fafc;
+            background-color: transparent;
             transition: var(--transition);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--navy-deep);
-            background-color: #ffffff;
-            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.05);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 100px;
+            min-height: 110px;
         }
 
         .btn-submit {
             width: 100%;
-            background: var(--navy-deep);
+            background: #c2410c; /* הגוון הכתום-אדמדם של הכפתור בתחתית הטופס */
             color: #ffffff;
             padding: 14px;
             border: none;
-            border-radius: 8px;
+            border-radius: 4px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+            margin-top: 25px;
             transition: var(--transition);
         }
 
         .btn-submit:hover {
-            background: var(--gold-accent);
-            box-shadow: 0 6px 16px rgba(217, 119, 6, 0.15);
+            background: var(--navy-deep);
         }
 
         /* --- MODAL EFFECT --- */
@@ -317,7 +351,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             position: relative;
             text-align: center;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
         }
 
         .close-modal {
@@ -327,10 +361,6 @@
             font-size: 1.8rem;
             cursor: pointer;
             color: var(--text-muted);
-        }
-
-        .close-modal:hover {
-            color: var(--text-main);
         }
 
         .food-list {
@@ -372,9 +402,10 @@
             transition: var(--transition);
         }
 
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+        @media (max-width: 768px) {
+            .logo-layout-grid { grid-template-columns: 1fr 1fr; }
+            .center-title-box { grid-column: span 2; order: -1; height: 100px; }
+            .form-row { grid-template-columns: 1fr; gap: 20px; }
         }
 
         @keyframes fadeIn {
@@ -384,7 +415,6 @@
 </head>
 <body>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="badge">DORON'S FOOD TRUCK</div>
         <h1>חוויה קולינרית לאירועי חברה</h1>
@@ -393,12 +423,10 @@
 
     <div class="container">
         
-        <!-- קטגוריות תפריט אינטראקטיביות -->
         <h2 class="section-title">התפריט שלנו</h2>
         <p class="section-subtitle">לחצו על הקטגוריה לצפייה במגוון המנות המלא</p>
         
         <div class="category-grid">
-            <!-- קוביית מרקים -->
             <div class="category-card" onclick="openModal('soup-modal')">
                 <div class="card-image-placeholder">🍲</div>
                 <div class="card-content">
@@ -408,7 +436,6 @@
                 </div>
             </div>
 
-            <!-- קוביית גלידות -->
             <div class="category-card" onclick="openModal('ice-modal')">
                 <div class="card-image-placeholder">🍦</div>
                 <div class="card-content">
@@ -419,7 +446,6 @@
             </div>
         </div>
 
-        <!-- התאמה לאירועים עסקיים ומוסדיים -->
         <h2 class="section-title">פתרונות הגשה לכל קונספט</h2>
         <p class="section-subtitle">נתאים את עצמנו בדיוק לאופי ולסגנון של הארגון שלכם</p>
         
@@ -440,55 +466,66 @@
                 <p>פתרון אירוח מושלם ומעוצב לחגים, ציוני דרך עסקיים, השקות ומסיבות פרטיות.</p>
             </div>
         </div>
-
-        <!-- אזור חברות שבחרו בנו -->
-        <h2 class="section-title">בין לקוחותינו</h2>
-        <p class="section-subtitle">הארגונים והחברות המובילים במשק שנהנו מחוויית האירוח של דורון</p>
-        
-        <div class="logo-grid">
-            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel Logo"></div>
-            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Elbit_Systems_logo.svg" alt="Elbit Logo"></div>
-            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Rafael_Advanced_Defense_Systems_logo.svg" alt="Rafael Logo"></div>
-            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Cellcom_logo.svg" alt="Cellcom Logo"></div>
-            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Partner_Communications_Company_logo.svg" alt="Partner Logo"></div>
-        </div>
-
-        <!-- טופס השארת פרטים מובנה ויוקרתי -->
-        <h2 class="section-title">השאירו פרטים להצעת מחיר</h2>
-        <p class="section-subtitle">תכננו יחד את האירוע המושלם עבור העובדים שלכם</p>
-        
-        <section class="contact-section">
-            <!-- יש להחליף את ה-YOUR_EMAIL_HERE במייל האמיתי של אבא כדי לקבל הודעות ישירות לשם -->
-            <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
-                <div class="form-group">
-                    <label for="name">שם מלא<span class="required-star">*</span></label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="ישראל ישראלי" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">טלפון נייד<span class="required-star">*</span></label>
-                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="050-1234567" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">כתובת אימייל<span class="required-star">*</span></label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="company@email.com" required>
-                </div>
-               <div class="form-group">
-    <label for="message">נשמח לשמוע על האירוע שלכם: ספרו לנו בקצרצר על הקונספט המבוקש, כמות המשתתפים המשוערת וכל פרט שחשוב לכם שנדע כדי להרכיב עבורכם את החוויה המושלמת.</label>
-    <textarea id="message" name="message" class="form-control" placeholder="למשל: תאריך מועדף, מיקום האירוע, סגנון המנות המבוקש (קיץ/חורף) וכל דגש אחר שיעזור לנו לדייק את הצעת המחיר..."></textarea>
-</div>
-                <button type="submit" class="btn-submit">שליחת פרטים לדורון</button>
-            </form>
-        </section>
-
-        <!-- כפתור וואטסאפ מהיר למי שרוצה מענה מיידי -->
-        <div class="cta-container">
-            <p style="margin-bottom: 15px; font-weight: 600; color: var(--text-muted);">מעדיפים לדבר איתנו ישירות עכשיו?</p>
-            <a href="https://wa.me/972538281987?text=שלום%20דורון,%20נשמח%20לקבל%20פרטים%20והצעת%20מחיר%20עבור%20אירוע%20חברה%20מהאתר." class="btn-whatsapp" target="_blank">מענה מהיר בוואטסאפ 💬</a>
-        </div>
-
     </div>
 
-    <!-- --- חלונות קופצים (MODALS) --- -->
+    <section class="customers-wrapper">
+        <div class="logo-layout-grid">
+            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel"></div>
+            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Elbit_Systems_logo.svg" alt="Elbit"></div>
+            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Rafael_Advanced_Defense_Systems_logo.svg" alt="Rafael"></div>
+            
+            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Cellcom_logo.svg" alt="Cellcom"></div>
+            <div class="center-title-box">
+                <h3>OUR<br><span>CUSTOMERS</span></h3>
+            </div>
+            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Partner_Communications_Company_logo.svg" alt="Partner"></div>
+            
+            <div class="logo-layout-box"><img src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco/v1408620242/fubf7wz6idffnshgshmm.png" alt="NetApp"></div>
+            <div class="logo-layout-box"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft"></div>
+            <div class="logo-layout-box"><img src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco/v1473852758/g2pwhstnhg3shf6g1w9w.png" alt="Mindspace"></div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>מרגישים את הפרפרים בבטן של האירוע הבא?</h2>
+        <p class="form-subtitle">השאירו פרטים ונהפוך אותו לכל מה שחלמתם עליו.</p>
+        
+        <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">שם מלא</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">חברה / ארגון</label>
+                    <input type="text" id="company" name="company" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">טלפון</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">אימייל</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+                <label for="message">עוד קצת פרטים לפני שנדבר</label>
+                <textarea id="message" name="message" class="form-control" placeholder="נשמח לשמוע על כמות משתתפים, תאריך מועדף או סגנון האירוע..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">שליחת פרטים לדורון</button>
+        </form>
+    </section>
+
+    <div class="container">
+        <div class="cta-container" style="margin-top: -2rem;">
+            <p style="margin-bottom: 15px; font-weight: 600; color: var(--text-muted);">מעדיפים מענה מהיר ומיידי?</p>
+            <a href="https://wa.me/972538281987?text=שלום%20דורון,%20נשמח%20לקבל%20פרטים%20והצעת%20מחיר%20עבור%20אירוע%20חברה%20מהאתר." class="btn-whatsapp" target="_blank">מענה מהיר בוואטסאפ 💬</a>
+        </div>
+    </div>
+
     <div id="soup-modal" class="modal" onclick="closeModal('soup-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal('soup-modal')">&times;</span>
